@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://dy47o5sg51v75"]
+
+[ext_resource type="Script" uid="uid://d3xbgh8qbhdi7" path="res://scripts/game-manager.gd" id="1_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://desasx83ympiy" path="res://scenes/sliver.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://bu5njph3wtx54" path="res://scenes/skill-tree.tscn" id="2_yqjtg"]
+[ext_resource type="Script" uid="uid://ct0by32fjl41q" path="res://scripts/camera.gd" id="3_iywne"]
+[ext_resource type="PackedScene" uid="uid://c7lreppce0t22" path="res://scenes/ui.tscn" id="3_lnu2h"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_lbhrr")
+
+[node name="Sliver" parent="." instance=ExtResource("1_uwrxv")]
+
+[node name="Camera" type="Camera2D" parent="."]
+script = ExtResource("3_iywne")
+
+[node name="Skill Tree" parent="." node_paths=PackedStringArray("gameManager") instance=ExtResource("2_yqjtg")]
+position = Vector2(496, -165)
+gameManager = NodePath("..")
+
+[node name="UI Canvas" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="UI Canvas" node_paths=PackedStringArray("gameManager") instance=ExtResource("3_lnu2h")]
+gameManager = NodePath("../..")
+
+[connection signal="clicked" from="Sliver" to="." method="_increment_growth_points"]

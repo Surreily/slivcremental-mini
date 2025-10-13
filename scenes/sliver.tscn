@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://desasx83ympiy"]
+
+[ext_resource type="Texture2D" uid="uid://6wfldheruygo" path="res://graphics/sliver.png" id="1_ii8uc"]
+[ext_resource type="Script" uid="uid://c0fvp07qjc5rt" path="res://scripts/sliver-manager.gd" id="1_yb834"]
+[ext_resource type="Script" uid="uid://dn7e1eq26mgq8" path="res://scripts/ui/clickable-behaviour.gd" id="3_0fosg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ii8uc"]
+size = Vector2(256, 256)
+
+[node name="Sliver" type="Node2D"]
+script = ExtResource("1_yb834")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ii8uc")
+
+[node name="Collision Area" type="Area2D" parent="."]
+collision_layer = 15
+collision_mask = 15
+script = ExtResource("3_0fosg")
+
+[node name="Collision Shape" type="CollisionShape2D" parent="Collision Area"]
+shape = SubResource("RectangleShape2D_ii8uc")
+
+[connection signal="clicked" from="Collision Area" to="." method="_on_clicked"]
+[connection signal="input_event" from="Collision Area" to="Collision Area" method="_on_area_2d_input_event"]

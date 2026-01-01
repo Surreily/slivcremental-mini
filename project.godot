@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Currencies="*res://scripts/data/currencies.gd"
 Stats="*res://scripts/data/stats.gd"
+Skills="*res://scripts/data/skills.gd"
 
 [rendering]
 

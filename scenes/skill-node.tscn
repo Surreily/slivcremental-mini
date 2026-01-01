@@ -1,10 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://dx1nu8q4xqpid"]
+[gd_scene load_steps=9 format=3 uid="uid://dx1nu8q4xqpid"]
 
 [ext_resource type="Script" uid="uid://chrv18u8sjmab" path="res://scripts/skill-node.gd" id="1_cikux"]
 [ext_resource type="Texture2D" uid="uid://806jqk74evve" path="res://graphics/skills/background.png" id="2_3v3bl"]
+[ext_resource type="Shader" uid="uid://8dnmqbw8vyxk" path="res://shaders/colourizer.gdshader" id="2_lwhvw"]
 [ext_resource type="Texture2D" uid="uid://b31igk5fvd774" path="res://graphics/skills/border.png" id="3_3v3bl"]
 [ext_resource type="Texture2D" uid="uid://dkhbqn4tbpg6j" path="res://graphics/skills/skill-combat.png" id="4_3v3bl"]
 [ext_resource type="Script" uid="uid://dn7e1eq26mgq8" path="res://scripts/ui/clickable-behaviour.gd" id="4_pfq4w"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c6gft"]
+shader = ExtResource("2_lwhvw")
+shader_parameter/color = Vector3(0.6, 0.2, 0.3)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cikux"]
 radius = 64.0
@@ -14,12 +19,13 @@ script = ExtResource("1_cikux")
 linkedSkillNodes = [null]
 
 [node name="Background Sprite" type="Sprite2D" parent="."]
-rotation = 9.22704
+material = SubResource("ShaderMaterial_c6gft")
+rotation = 12.949
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_3v3bl")
 
 [node name="Border Sprite" type="Sprite2D" parent="."]
-rotation = 11.9409
+rotation = 21.9976
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_3v3bl")
 

@@ -1,3 +1,4 @@
+class_name Skills
 extends Node
 
 # Incremental growth points skills.

@@ -17,9 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Currencies="*res://scripts/data/currencies.gd"
-Stats="*res://scripts/data/stats.gd"
-Skills="*res://scripts/data/skills.gd"
+State="*res://scripts/model/state.gd"
 
 [rendering]
 

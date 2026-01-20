@@ -41,4 +41,4 @@ func link_skill_tree_nodes(parent: SkillNode, child: SkillNode) -> void:
 	add_child(line)
 
 func _increment_growth_points_1() -> void:
-	Stats.growthPointsPerClick += 1
+	State.statistics.growthPointsPerClick += 1

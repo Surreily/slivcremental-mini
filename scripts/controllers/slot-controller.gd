@@ -1,0 +1,2 @@
+class_name SlotController
+extends Node2D

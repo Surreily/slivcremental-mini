@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://4gs1x2yydfwx"]
+
+[ext_resource type="Texture2D" uid="uid://crns8pn5tou1s" path="res://graphics/slots/slot-border.png" id="1_4v6ba"]
+[ext_resource type="Script" uid="uid://c3tj7mpuf7svp" path="res://scripts/controllers/slot-controller.gd" id="1_ic0fu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jpyuo"]
+size = Vector2(256, 256)
+
+[node name="Slot" type="Node2D"]
+script = ExtResource("1_ic0fu")
+
+[node name="Click Area" type="Area2D" parent="."]
+
+[node name="Click Shape" type="CollisionShape2D" parent="Click Area"]
+shape = SubResource("RectangleShape2D_jpyuo")
+
+[node name="Border Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_4v6ba")

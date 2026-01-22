@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://tag7ptwoa8d6"]
+
+[ext_resource type="Script" uid="uid://b0crsk0l02m6q" path="res://scripts/controllers/sliver-hive-controller.gd" id="1_plgm8"]
+
+[node name="Sliver Hive" type="Node2D"]
+script = ExtResource("1_plgm8")

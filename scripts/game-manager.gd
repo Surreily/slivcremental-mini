@@ -7,7 +7,9 @@ var growthPointsPerClick: int = 1
 
 func _ready() -> void:
 	$"Skill Tree".update_from_state()
-
+	$"Sliver Hive".update_from_state()
+	
+	
 func _increment_growth_points() -> void:
 	State.currencies.sliv_points += State.statistics.growthPointsPerClick
 	growth_points_changed.emit()

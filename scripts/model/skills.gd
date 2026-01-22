@@ -1,6 +1,8 @@
 class_name Skills
 extends Node
 
+var keys: Array[String] = []
+
 # Incremental growth points skills.
 var isIncrementalGrowthPoints1Unlocked: bool = false
 var isIncrementalGrowthPoints2Unlocked: bool = false

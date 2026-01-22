@@ -12,27 +12,38 @@ lineTexture = ExtResource("2_g8e78")
 [node name="Increment Growth Points 1" parent="." node_paths=PackedStringArray("linkedSkillNodes") instance=ExtResource("1_glyw6")]
 linkedSkillNodes = [NodePath("../Increment Growth Points 2"), NodePath("../Skill3"), NodePath("../Skill4")]
 skillTexture = ExtResource("4_g8e78")
+key = "incremental-growth-1"
 
-[node name="Increment Growth Points 2" parent="." instance=ExtResource("1_glyw6")]
+[node name="Increment Growth Points 2" parent="." node_paths=PackedStringArray("linkedSkillNodes") instance=ExtResource("1_glyw6")]
 position = Vector2(-179, -68)
+linkedSkillNodes = []
 costInGrowthPoints = 20
 skillTexture = ExtResource("4_g8e78")
+key = "increment-growth-2"
 
 [node name="Skill3" parent="." node_paths=PackedStringArray("linkedSkillNodes") instance=ExtResource("1_glyw6")]
 position = Vector2(8, -269)
 linkedSkillNodes = [NodePath("../Skill5"), NodePath("../Skill6")]
+key = "skill-3"
 
-[node name="Skill4" parent="." instance=ExtResource("1_glyw6")]
+[node name="Skill4" parent="." node_paths=PackedStringArray("linkedSkillNodes") instance=ExtResource("1_glyw6")]
 position = Vector2(378, -104)
+linkedSkillNodes = []
+key = "skill-4"
 
-[node name="Skill5" parent="." instance=ExtResource("1_glyw6")]
+[node name="Skill5" parent="." node_paths=PackedStringArray("linkedSkillNodes") instance=ExtResource("1_glyw6")]
 position = Vector2(-143, -530)
+linkedSkillNodes = []
+key = "skill-5"
 
 [node name="Skill6" parent="." node_paths=PackedStringArray("linkedSkillNodes") instance=ExtResource("1_glyw6")]
 position = Vector2(297, -540)
 linkedSkillNodes = [NodePath("../Skill7")]
+key = "skill-6"
 
-[node name="Skill7" parent="." instance=ExtResource("1_glyw6")]
+[node name="Skill7" parent="." node_paths=PackedStringArray("linkedSkillNodes") instance=ExtResource("1_glyw6")]
 position = Vector2(569, -606)
+linkedSkillNodes = []
+key = "skill-7"
 
 [connection signal="clicked" from="Increment Growth Points 1" to="." method="_increment_growth_points_1"]

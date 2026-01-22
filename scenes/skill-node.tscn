@@ -17,15 +17,14 @@ radius = 64.0
 [node name="Skill" type="Node2D" node_paths=PackedStringArray("linkedSkillNodes")]
 script = ExtResource("1_cikux")
 linkedSkillNodes = [null]
+key = null
 
 [node name="Background Sprite" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_c6gft")
-rotation = 19.9894
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_3v3bl")
 
 [node name="Border Sprite" type="Sprite2D" parent="."]
-rotation = 29.5046
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_3v3bl")
 

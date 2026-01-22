@@ -7,7 +7,7 @@ class_name SkillTreeController extends Node
 
 func _ready() -> void:
 	for child in get_children():
-		if is_instance_of(child, SkillNode):
+		if is_instance_of(child, SkillNodeController):
 			link_nodes(child)
 			
 func _process(delta: float) -> void:
@@ -17,12 +17,12 @@ func _process(delta: float) -> void:
 			#if is_instance_of(child, SkillNode):
 				#link_nodes(child)
 
-func link_nodes(parent: SkillNode):
+func link_nodes(parent: SkillNodeController):
 	for child in parent.linkedSkillNodes:
 		if child != null:
 			link_skill_tree_nodes(parent, child)
 
-func link_skill_tree_nodes(parent: SkillNode, child: SkillNode) -> void:
+func link_skill_tree_nodes(parent: SkillNodeController, child: SkillNodeController) -> void:
 	# Calculate the line's endpoints.
 	var vector = child.position - parent.position
 	vector = vector.normalized()

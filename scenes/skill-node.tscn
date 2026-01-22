@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dx1nu8q4xqpid"]
 
-[ext_resource type="Script" uid="uid://chrv18u8sjmab" path="res://scripts/skill-node.gd" id="1_cikux"]
+[ext_resource type="Script" uid="uid://chrv18u8sjmab" path="res://scripts/controllers/skill-node-controller.gd" id="1_cikux"]
 [ext_resource type="Texture2D" uid="uid://806jqk74evve" path="res://graphics/skills/background.png" id="2_3v3bl"]
 [ext_resource type="Shader" uid="uid://8dnmqbw8vyxk" path="res://shaders/colourizer.gdshader" id="2_lwhvw"]
 [ext_resource type="Texture2D" uid="uid://b31igk5fvd774" path="res://graphics/skills/border.png" id="3_3v3bl"]
@@ -20,12 +20,12 @@ linkedSkillNodes = [null]
 
 [node name="Background Sprite" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_c6gft")
-rotation = 13.2792
+rotation = 19.9894
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_3v3bl")
 
 [node name="Border Sprite" type="Sprite2D" parent="."]
-rotation = 22.5005
+rotation = 29.5046
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_3v3bl")
 

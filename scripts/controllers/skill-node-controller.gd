@@ -1,10 +1,10 @@
 @tool
 
-class_name SkillNode extends Node2D
+class_name SkillNodeController extends Node2D
 
 signal clicked
 
-@export var linkedSkillNodes: Array[SkillNode] = []
+@export var linkedSkillNodes: Array[SkillNodeController] = []
 @export var costInGrowthPoints: int = 0
 @export var skillTexture: Texture2D = null
 

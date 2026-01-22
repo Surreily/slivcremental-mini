@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bu5njph3wtx54"]
 
-[ext_resource type="Script" uid="uid://botf7gdgcsfla" path="res://scripts/skill-tree.gd" id="1_7y6fp"]
+[ext_resource type="Script" uid="uid://botf7gdgcsfla" path="res://scripts/controllers/skill-tree-controller.gd" id="1_7y6fp"]
 [ext_resource type="PackedScene" uid="uid://dx1nu8q4xqpid" path="res://scenes/skill-node.tscn" id="1_glyw6"]
 [ext_resource type="Texture2D" uid="uid://d0e05xymidup4" path="res://graphics/line-dashed.png" id="2_g8e78"]
 [ext_resource type="Texture2D" uid="uid://be6w800wf6gso" path="res://graphics/skills/skill-growth-increase.png" id="4_g8e78"]

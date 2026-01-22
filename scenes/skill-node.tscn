@@ -20,12 +20,12 @@ linkedSkillNodes = [null]
 
 [node name="Background Sprite" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_c6gft")
-rotation = 12.949
+rotation = 13.2792
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_3v3bl")
 
 [node name="Border Sprite" type="Sprite2D" parent="."]
-rotation = 21.9976
+rotation = 22.5005
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_3v3bl")
 

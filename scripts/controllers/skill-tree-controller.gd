@@ -1,6 +1,6 @@
 @tool
 
-class_name SkillTree extends Node
+class_name SkillTreeController extends Node
 
 @export var gameManager: GameManager
 @export var lineTexture: Texture2D

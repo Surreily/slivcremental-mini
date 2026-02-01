@@ -14,7 +14,7 @@ func load() -> void:
 	
 	# Deserialize the data.
 	_deserialize_slivers(data["slivers"])
-	_deserialize_sliver_hive(data["slivers"])
+	_deserialize_sliver_hive(data["sliver-hive"])
 
 func _deserialize_slivers(slivers_data) -> void:
 	var slivers: Array[Sliver] = []
@@ -40,7 +40,7 @@ func _deserialize_sliver_hive(slivers_data) -> void:
 		
 		sliver.id = sliver_data["id"]
 		
-		game_controller.sliver_hive.set_sliver(sliver)
+		game_controller.sliver_hive_controller.set_sliver(sliver)
 		State.sliver_hive.set_value(sliver_data["x"], sliver_data["y"], sliver)
 
 func _deserialize_skills(skills_data) -> void:

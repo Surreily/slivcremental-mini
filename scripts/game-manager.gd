@@ -13,7 +13,8 @@ func _ready() -> void:
 	sliver_hive_controller = $"Sliver Hive"
 	
 	skill_tree_controller.update_from_state()
-	sliver_hive_controller.update_from_state()
+	
+	_test_save_load()
 
 func _test_save_load() -> void:
 	var sliver = Sliver.new()

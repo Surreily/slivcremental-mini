@@ -1,11 +1,15 @@
 class_name JsonSaver
 extends RefCounted
 
+var game_controller: GameManager
+
+func _init(game_controller: GameManager) -> void:
+	self.game_controller = game_controller
+
 func save() -> void:
 	var dictionary: Dictionary = {
 		"currencies": _serialize_currencies(),
 		"slivers": _serialize_slivers(),
-		"sliver-hive": _serialize_sliver_hive(),
 		"skills": _serialize_skills(),
 	}
 	
@@ -21,30 +25,22 @@ func _serialize_currencies() -> Dictionary:
 func _serialize_slivers() -> Array:
 	var slivers_data = []
 	
-	for sliver in State.slivers:
-		slivers_data.append({
-			"id": sliver.id,
-			"x": sliver.x,
-			"y": sliver.y,
-		})
-	
-	return slivers_data
-
-func _serialize_sliver_hive() -> Array:
-	var sliver_hive_data = []
-	
-	for y in 10:
-		for x in 10:
-			var sliver: Sliver = State.sliver_hive.get_value(x, y)
+	for x in 10:
+		for y in 10:
+			var slot_controller: SlotController = \
+				game_controller.sliver_hive_controller.slot_controllers \
+					.get_value(x, y)
 			
-			if sliver != null:
-				sliver_hive_data.append({
+			if (slot_controller.sliver_controller != null):
+				var sliver = slot_controller.sliver_controller.sliver
+				
+				slivers_data.append({
 					"id": sliver.id,
 					"x": x,
 					"y": y,
 				})
-	
-	return sliver_hive_data
+
+	return slivers_data
 
 func _serialize_skills() -> Array:
 	var skills_data = []

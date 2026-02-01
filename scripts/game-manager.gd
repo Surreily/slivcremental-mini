@@ -17,15 +17,17 @@ func _ready() -> void:
 	_test_save_load()
 
 func _test_save_load() -> void:
+	
 	var sliver = Sliver.new()
 	sliver.id = "69" # Nice.
 	sliver.x = 0
 	sliver.y = 0
 	
-	State.sliver_hive = GridArray.new(10, 10)
-	State.sliver_hive.set_value(1, 1, sliver)
+	sliver_hive_controller.set_sliver(sliver)
 	
-	var saver: JsonSaver = JsonSaver.new()
+	State.sliver_hive = GridArray.new(10, 10)
+	
+	var saver: JsonSaver = JsonSaver.new(self)
 	saver.save()
 	
 	var loader: JsonLoader = JsonLoader.new(self)

@@ -17,5 +17,11 @@ func _init():
 			slot_controllers.set_value(x, y, slot)
 
 func set_sliver(sliver: Sliver):
-	var slot: SlotController = slot_controllers.get_value(sliver.x, sliver.y)
-	slot.set_sliver(sliver)
+	var slot_controller: SlotController = slot_controllers.get_value(sliver.x, sliver.y)
+	slot_controller.set_sliver(sliver)
+
+func clear_slivers():
+	for x in 10:
+		for y in 10:
+			var slot_controller: SlotController = slot_controllers.get_value(x, y)
+			slot_controller.clear_sliver()

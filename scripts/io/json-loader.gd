@@ -21,11 +21,13 @@ func _deserialize_slivers(slivers_data) -> void:
 	
 	# Add each sliver.
 	for sliver_data in slivers_data:
-		var sliver: Sliver = Sliver.new()
+		var x: int = sliver_data["x"]
+		var y: int = sliver_data["y"]
 		
+		var sliver: Sliver = Sliver.new()
 		sliver.id = sliver_data["id"]
 		
-		game_controller.sliver_hive_controller.set_sliver(sliver)
+		game_controller.sliver_hive_controller.set_sliver(sliver, x, y)
 
 func _deserialize_skills(skills_data) -> void:
 	State.skills.clear()

@@ -16,8 +16,8 @@ func _init():
 			add_child(slot)
 			slot_controllers.set_value(x, y, slot)
 
-func set_sliver(sliver: Sliver):
-	var slot_controller: SlotController = slot_controllers.get_value(sliver.x, sliver.y)
+func set_sliver(sliver: Sliver, x: int, y: int):
+	var slot_controller: SlotController = slot_controllers.get_value(x, y)
 	slot_controller.set_sliver(sliver)
 
 func clear_slivers():

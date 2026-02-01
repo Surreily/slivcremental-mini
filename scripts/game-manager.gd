@@ -20,10 +20,8 @@ func _test_save_load() -> void:
 	
 	var sliver = Sliver.new()
 	sliver.id = "69" # Nice.
-	sliver.x = 0
-	sliver.y = 0
 	
-	sliver_hive_controller.set_sliver(sliver)
+	sliver_hive_controller.set_sliver(sliver, 1, 0) # Second box on top row.
 	
 	State.sliver_hive = GridArray.new(10, 10)
 	

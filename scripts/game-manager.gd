@@ -20,8 +20,11 @@ func _increment_growth_points() -> void:
 	sliver.x = 0
 	sliver.y = 0
 	
+	State.sliver_hive = GridArray.new(10, 10)
+	State.sliver_hive.set_value(1, 1, sliver)
+	
 	var saver: JsonSaver = JsonSaver.new()
-	saver.save(sliver)
+	saver.save()
 	
 	var loader: JsonLoader = JsonLoader.new()
 	loader.load()

@@ -14,17 +14,17 @@ shader_parameter/color = Vector3(0.6, 0.2, 0.3)
 [sub_resource type="CircleShape2D" id="CircleShape2D_cikux"]
 radius = 64.0
 
-[node name="Skill" type="Node2D" node_paths=PackedStringArray("linkedSkillNodes")]
+[node name="Skill" type="Node2D"]
 script = ExtResource("1_cikux")
-linkedSkillNodes = [null]
-key = null
 
 [node name="Background Sprite" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_c6gft")
+rotation = 7.15335
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_3v3bl")
 
 [node name="Border Sprite" type="Sprite2D" parent="."]
+rotation = 8.2896
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_3v3bl")
 

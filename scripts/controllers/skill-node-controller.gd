@@ -28,10 +28,10 @@ func _ready() -> void:
 
 func update_from_state() -> void:
 	# Get the purchase status of relevant nodes in the tree (this one and its parent).
-	var is_purchased_in_state: bool = State.skills.keys.find(key) != -1
+	var is_purchased_in_state: bool = State.skills.find(key) != -1
 	var is_parent_purchased_in_state: bool = \
 		parent_node == null || \
-		State.skills.keys.find(parent_node.key) != -1
+		State.skills.find(parent_node.key) != -1
 	
 	# Update visibility of sprites based on purchase status.
 	$"Border Sprite".visible = is_parent_purchased_in_state
@@ -60,7 +60,7 @@ func _on_click() -> void:
 	if (unlocked):
 		return
 
-	State.skills.keys.append(key)
+	State.skills.append(key)
 
 	unlocked = true
 	clicked.emit()

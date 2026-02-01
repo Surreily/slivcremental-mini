@@ -2,19 +2,20 @@ class_name GameManager extends Node
 
 signal growth_points_changed
 
+var skill_tree_controller: SkillTreeController
+var sliver_hive_controller: SliverHiveController
+
 var growthPoints: int = 0
 var growthPointsPerClick: int = 1
 
 func _ready() -> void:
-	$"Skill Tree".update_from_state()
-	$"Sliver Hive".update_from_state()
+	skill_tree_controller = $"Skill Tree"
+	sliver_hive_controller = $"Sliver Hive"
 	
-	
-func _increment_growth_points() -> void:
-	State.currencies.sliv_points += State.statistics.growthPointsPerClick
-	growth_points_changed.emit()
-	
-	# TODO: All following code in this method is temp testing code. Delete it!
+	skill_tree_controller.update_from_state()
+	sliver_hive_controller.update_from_state()
+
+func _test_save_load() -> void:
 	var sliver = Sliver.new()
 	sliver.id = "69" # Nice.
 	sliver.x = 0
@@ -26,5 +27,5 @@ func _increment_growth_points() -> void:
 	var saver: JsonSaver = JsonSaver.new()
 	saver.save()
 	
-	var loader: JsonLoader = JsonLoader.new()
+	var loader: JsonLoader = JsonLoader.new(self)
 	loader.load()

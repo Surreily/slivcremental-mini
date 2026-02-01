@@ -26,5 +26,3 @@ position = Vector2(128, 128)
 
 [node name="UI" parent="UI Canvas" node_paths=PackedStringArray("gameManager") instance=ExtResource("3_lnu2h")]
 gameManager = NodePath("../..")
-
-[connection signal="clicked" from="Sliver" to="." method="_increment_growth_points"]

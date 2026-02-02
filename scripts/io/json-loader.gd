@@ -3,8 +3,8 @@ extends RefCounted
 
 var game_controller: GameManager
 
-func _init(game_controller: GameManager) -> void:
-	self.game_controller = game_controller
+func _init(p_game_controller: GameManager) -> void:
+	self.game_controller = p_game_controller
 
 func load() -> void:
 	# Load the saved data.

@@ -14,7 +14,12 @@ func _ready() -> void:
 	
 	skill_tree_controller.update_from_state()
 	
+	_initialize_skill_tree()
 	_test_save_load()
+
+func _initialize_skill_tree() -> void:
+	var initialize_skill_tree = InitializeSkillTree.new(skill_tree_controller)
+	initialize_skill_tree.initialize()
 
 func _test_save_load() -> void:
 	

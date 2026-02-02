@@ -10,6 +10,9 @@ signal clicked
 @export var skillTexture: Texture2D = null
 @export var key: String = ""
 
+var title: String
+var description: String
+
 var parent_node: SkillNodeController = null
 var child_node_connections: Array[Line2D] = []
 var unlocked: bool = false

@@ -5,9 +5,9 @@ var array: Array
 var x_size: int
 var y_size: int
 
-func _init(x_size: int, y_size: int):
-	self.x_size = x_size
-	self.y_size = y_size
+func _init(p_x_size: int, p_y_size: int):
+	x_size = p_x_size
+	y_size = p_y_size
 	
 	array.clear()
 	array.resize(x_size * y_size)

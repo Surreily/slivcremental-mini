@@ -10,6 +10,9 @@ func initialize() -> void:
 	# Prepare skill node scene.
 	var _skill_node_scene = load("res://scenes/skill-node.tscn")
 
+	# Prepare texture dictionary.
+	var _texture_dictionary: Dictionary = {}
+
 	var _parser = XMLParser.new()
 	_parser.open("res://data/skills.xml")
 
@@ -42,6 +45,17 @@ func initialize() -> void:
 						_current_skill.position.x = _parser.get_attribute_value(i) as float * 128
 					elif _parser.get_attribute_name(i) == "Y":
 						_current_skill.position.y = _parser.get_attribute_value(i) as float * 128
+					elif _parser.get_attribute_name(i) == "Icon":
+						var _resource_path: String = "res://graphics/skills/" + _parser.get_attribute_value(i) + ".png"
+
+						if (_texture_dictionary.has(_resource_path)):
+							_current_skill.set_icon(_texture_dictionary.get(_resource_path))
+						else:
+							var _image: Image = Image.load_from_file(_resource_path)
+							var _texture: Texture2D = ImageTexture.create_from_image(_image)
+							_texture.create_from_image(_texture)
+							_texture_dictionary.set(_resource_path, _texture)
+							_current_skill.set_icon(_texture)
 				
 				skill_tree_controller.add_child(_current_skill)
 

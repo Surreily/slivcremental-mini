@@ -5,7 +5,8 @@
 		Name="Super Sliv Energy"
 		Description="Add 1 to each sliv you get!"
 		X="0"
-		Y="0">
+		Y="0"
+		Icon="skill-growth-critical">
 		<Connections>
 			<Connection
 				Key="cooking-minigame" />
@@ -26,6 +27,7 @@
 		Name="You Embark Upon a Quest"
 		Description="Unlock the exploration minigame."
 		X="1"
-		Y="1" />
+		Y="1"
+		Icon="skill-more-tiles" />
 
 </Skills>

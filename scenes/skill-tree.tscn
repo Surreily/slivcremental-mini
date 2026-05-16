@@ -1,42 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bu5njph3wtx54"]
+[gd_scene load_steps=3 format=3 uid="uid://bu5njph3wtx54"]
 
 [ext_resource type="Script" uid="uid://botf7gdgcsfla" path="res://scripts/controllers/skill-tree-controller.gd" id="1_7y6fp"]
-[ext_resource type="PackedScene" uid="uid://dx1nu8q4xqpid" path="res://scenes/skill-node.tscn" id="1_glyw6"]
 [ext_resource type="Texture2D" uid="uid://d0e05xymidup4" path="res://graphics/line-dashed.png" id="2_g8e78"]
-[ext_resource type="Texture2D" uid="uid://be6w800wf6gso" path="res://graphics/skills/skill-growth-increase.png" id="4_g8e78"]
 
 [node name="Skill Tree" type="Node2D"]
 script = ExtResource("1_7y6fp")
 lineTexture = ExtResource("2_g8e78")
-
-[node name="Increment Growth Points 1" parent="." instance=ExtResource("1_glyw6")]
-skillTexture = ExtResource("4_g8e78")
-key = "incremental-growth-1"
-
-[node name="Increment Growth Points 2" parent="." instance=ExtResource("1_glyw6")]
-position = Vector2(-179, -68)
-costInGrowthPoints = 20
-skillTexture = ExtResource("4_g8e78")
-key = "increment-growth-2"
-
-[node name="Skill3" parent="." instance=ExtResource("1_glyw6")]
-position = Vector2(8, -269)
-key = "skill-3"
-
-[node name="Skill4" parent="." instance=ExtResource("1_glyw6")]
-position = Vector2(378, -104)
-key = "skill-4"
-
-[node name="Skill5" parent="." instance=ExtResource("1_glyw6")]
-position = Vector2(-143, -530)
-key = "skill-5"
-
-[node name="Skill6" parent="." instance=ExtResource("1_glyw6")]
-position = Vector2(297, -540)
-key = "skill-6"
-
-[node name="Skill7" parent="." instance=ExtResource("1_glyw6")]
-position = Vector2(569, -606)
-key = "skill-7"
-
-[connection signal="clicked" from="Increment Growth Points 1" to="." method="_increment_growth_points_1"]

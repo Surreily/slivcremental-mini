@@ -8,6 +8,8 @@ var sliver_hive_controller: SliverHiveController
 var growthPoints: int = 0
 var growthPointsPerClick: int = 1
 
+@export var skill_tree_line_texture: Texture2D
+
 func _ready() -> void:
 	skill_tree_controller = $"Skill Tree"
 	sliver_hive_controller = $"Sliver Hive"
@@ -18,7 +20,7 @@ func _ready() -> void:
 	_test_save_load()
 
 func _initialize_skill_tree() -> void:
-	var initialize_skill_tree = InitializeSkillTree.new(skill_tree_controller)
+	var initialize_skill_tree = InitializeSkillTree.new(skill_tree_controller, skill_tree_line_texture)
 	initialize_skill_tree.initialize()
 
 func _test_save_load() -> void:

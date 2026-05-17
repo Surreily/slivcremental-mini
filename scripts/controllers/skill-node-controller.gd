@@ -25,32 +25,28 @@ func _ready() -> void:
 	$"Background Sprite".rotate(rng.randf_range(0, PI * 2))
 	$"Border Sprite".rotate(rng.randf_range(0, PI * 2))
 
-	# Update the skill sprite.
-	# if (skillTexture != null):
-	# 	$"Skill Sprite".texture = skillTexture
-
 func set_icon(p_texture: Texture2D) -> void:
 	$"Skill Sprite".texture = p_texture
 
-func update_from_state() -> void:
-	# Get the purchase status of relevant nodes in the tree (this one and its parent).
-	var is_purchased_in_state: bool = State.skills.find(key) != -1
-	var is_parent_purchased_in_state: bool = \
-		parent_node == null || \
-		State.skills.find(parent_node.key) != -1
+#func update_from_state() -> void:
+	## Get the purchase status of relevant nodes in the tree (this one and its parent).
+	#var is_purchased_in_state: bool = State.skills.find(key) != -1
+	#var is_parent_purchased_in_state: bool = \
+		#parent_node == null || \
+		#State.skills.find(parent_node.key) != -1
+#
+	## Update visibility of sprites based on purchase status.
+	#$"Border Sprite".visible = is_parent_purchased_in_state
+	#$"Skill Sprite".visible = is_parent_purchased_in_state
+#
+	#for connection in child_node_connections:
+		#connection.visible = is_purchased_in_state
+#
+	#$"Background Sprite".visible = is_purchased_in_state
 
-	# Update visibility of sprites based on purchase status.
-	$"Border Sprite".visible = is_parent_purchased_in_state
-	$"Skill Sprite".visible = is_parent_purchased_in_state
-
-	for connection in child_node_connections:
-		connection.visible = is_purchased_in_state
-
-	$"Background Sprite".visible = is_purchased_in_state
-
-func on_unlock() -> void:
-	# Update this node.
-	update_from_state()
+#func on_unlock() -> void:
+	## Update this node.
+	#update_from_state()
 
 	# Update linked nodes.
 	for node in linkedSkillNodes:
@@ -71,4 +67,4 @@ func _on_click() -> void:
 	unlocked = true
 	clicked.emit()
 
-	on_unlock()
+	#on_unlock()

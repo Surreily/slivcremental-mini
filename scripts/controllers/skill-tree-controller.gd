@@ -9,13 +9,6 @@ func _ready() -> void:
 	for child in get_children():
 		if is_instance_of(child, SkillNodeController):
 			link_nodes(child)
-			
-func _process(delta: float) -> void:
-	if (Engine.is_editor_hint()):
-		pass # TODO: Update child endpoints
-		#for child in get_children():
-			#if is_instance_of(child, SkillNode):
-				#link_nodes(child)
 
 func update_from_state() -> void:
 	for child in get_children():

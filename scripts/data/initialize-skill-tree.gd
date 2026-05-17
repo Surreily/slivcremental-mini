@@ -2,9 +2,11 @@ class_name InitializeSkillTree
 extends RefCounted
 
 var skill_tree_controller: SkillTreeController
+var skill_tree_line_texture: Texture2D
 
-func _init(p_skill_tree_controller: SkillTreeController) -> void:
+func _init(p_skill_tree_controller: SkillTreeController, p_skill_tree_line_texture: Texture2D) -> void:
 	skill_tree_controller = p_skill_tree_controller
+	skill_tree_line_texture = p_skill_tree_line_texture
 
 func initialize() -> void:
 	# Prepare skill node scene.
@@ -112,8 +114,26 @@ func initialize() -> void:
 	
 	# Link up nodes.
 	for _key in _connections.keys():
-		var _key_skill_node: SkillNodeController = _skill_nodes[_key]
+		var _from_skill_node: SkillNodeController = _skill_nodes[_key]
 		
 		for _value in _connections[_key]:
-			var _value_skill_node: SkillNodeController = _skill_nodes[_value]
-			_key_skill_node.linkedSkillNodes.append(_value_skill_node)
+			var _to_skill_node: SkillNodeController = _skill_nodes[_value]
+
+			# Keep track of which nodes the "from" node is linked to. This ensures we can easily access it later.
+			_from_skill_node.linkedSkillNodes.append(_to_skill_node)
+
+			# Calculate the line's endpoints.
+			var _skill_node_center_offset: Vector2 = _to_skill_node.position - _from_skill_node.position
+			_skill_node_center_offset = _skill_node_center_offset.normalized() * 64
+			
+			var _line_point_from = _from_skill_node.position + _skill_node_center_offset
+			var _line_point_to = _to_skill_node.position - _skill_node_center_offset
+			
+			# Create the line.
+			var _line: Line2D = Line2D.new()
+			_line.add_point(_line_point_from)
+			_line.add_point(_line_point_to)
+			_line.texture = skill_tree_line_texture
+			_line.texture_mode = Line2D.LINE_TEXTURE_TILE
+			_line.width = 32
+			skill_tree_controller.add_child(_line)
